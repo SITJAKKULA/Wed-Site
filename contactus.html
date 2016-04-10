@@ -6,7 +6,50 @@
 <meta name="keywords" content=""/>
 <meta name="author" content=""/>
 <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
-<title>Contact Us</title>
+<title>Employee details</title>
+<script type="text/javascript">
+function validateFields(){
+	var name = document.getElementById('name').value;
+	var email = document.getElementById('email').value;
+    var email = document.getElementById('Emp ID').value;
+    var email = document.getElementById('Number').value;
+	var message = document.getElementById('message').value;
+
+	var alertMessage = "";
+	var check = true;
+
+	if(name.trim().length == 0){
+		alertMessage += "Please fill the Name \n";
+		check = false;
+	}
+	if(email.trim().length == 0){
+		alertMessage += "Please fill the Email \n";
+		check = false;
+	}
+    if(email.trim().length == 0){
+		alertMessage += "Please fill the Emp ID \n";
+		check = false;
+	}
+    if(email.trim().length == 0){
+		alertMessage += "Please fill the Number \n";
+		check = false;
+	}
+	if(message.trim().length == 0){
+		alertMessage += "Please fill the Message \n";
+		check = false;
+	}
+
+	if(!check){
+		alert(alertMessage);
+	}
+    else{
+        alertMessage += "Submited \n";
+        alert(alertMessage);
+        }
+	return check;
+}
+</script>
+
 </head>
 <body>
 <div id="wrapper">
@@ -14,31 +57,43 @@
     <div class="title">
       <h1><a href="index.html">Amet Systems</a></h1>
     </div>
-    <div class="navigation"> <a href="index.html" >Home</a> <a href="aboutus.html" >About Us</a> <a href="technology.html" >Technology</a> <a href="sitemap.html">Sitemap</a> <a href="contactus.html" id="active">Contact Us</a>
+    <div class="navigation"> <a href="index.html" >Home</a> <a href="aboutus.html" >About Us</a> <a href="technology.html" >Technology</a> <a href="sitemap.html">Sitemap</a> <a href="contactus.html" id="active">Employee Details</a>
       <div class="clearer"></div>
     </div>
     <div class="main">
       <div class="content">
-        <h3>Contact Us</h3>
+        <h3>Employee details</h3>
         <div class="row">
-          <label for="name">Your name:</label>
-          <input id="name" class="input" name="name" type="text" value="" size="30" />
+          <label for="name">Name:</label>
+          <input id="name" class="input" name="Name" type="text" value="" size="30" />
           <br />
           <br />
         </div>
         <div class="row">
-          <label for="email">Your email:</label>
+          <label for="email">email:</label>
           <input id="email" class="input" name="email" type="text" value="" size="30" />
           <br />
           <br />
-        </div>
+            </div>
         <div class="row">
-          <label for="message">Your message:</label>
+          <label for="Emp ID">Employee ID:</label>
+          <input id="Emp ID" class="input" name="Emp ID" type="text" value="" size="30" />
+          <br />
+          <br />
+        </div>
+          <div class="row">
+          <label for="Number">Phone No: </label>
+          <input id="Number" class="input" name="Phone No" type="text" value="" size="30" />
+          <br />
+          <br />
+            </div>
+        <div class="row">
+          <label for="message">Comments:</label>
           <textarea id="message" class="input" name="message" rows="7" cols="30"></textarea>
           <br />
           <br />
         </div>
-        <input id="submit_button" type="submit" value="Send email" />
+        <input id="submit_button" type="submit" onclick="return validateFields()" value="Submit" />
       </div>
     </div>
     <div class="footer">
@@ -48,4 +103,4 @@
   </div>
 </div>
 </body>
-</html>
+</html> 
